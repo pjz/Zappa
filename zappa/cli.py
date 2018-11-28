@@ -1716,10 +1716,16 @@ class ZappaCLI(object):
             env: {
                 'profile_name': profile_name,
                 's3_bucket': bucket,
-                'runtime': 'python3.6' if sys.version_info.major == 3 else 'python2.7',
                 'project_name': self.get_project_name()
             }
         }
+
+        if sys.version_info.major < 3:
+            zappa_settings[env]['runtime'] = 'python2.7'
+        elif sys.version_info.minor < 7:
+            zappa_settings[env]['runtime'] = 'python3.6'
+        else:
+            zappa_settings[env]['runtime'] = 'python3.7'
 
         if profile_region:
             zappa_settings[env]['aws_region'] = profile_region

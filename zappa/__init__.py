@@ -1,6 +1,6 @@
 import sys
 
-SUPPORTED_VERSIONS = [(2, 7), (3, 6)]
+SUPPORTED_VERSIONS = [(2, 7), (3, 6), (3, 7)]
 
 python_major_version = sys.version_info.major
 python_minor_version = sys.version_info.minor
