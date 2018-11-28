@@ -1716,7 +1716,7 @@ class ZappaCLI(object):
             env: {
                 'profile_name': profile_name,
                 's3_bucket': bucket,
-                'runtime': 'python3.6' if sys.version_info[0] == 3 else 'python2.7',
+                'runtime': 'python3.6' if sys.version_info.major == 3 else 'python2.7',
                 'project_name': self.get_project_name()
             }
         }
@@ -2215,7 +2215,7 @@ class ZappaCLI(object):
 
             # Custom excludes for different versions.
             # Related: https://github.com/kennethreitz/requests/issues/3985
-            if sys.version_info[0] < 3:
+            if sys.version_info.major < 3:
                 # Exclude packages already builtin to the python lambda environment
                 # Related: https://github.com/Miserlou/Zappa/issues/556
                 exclude = self.stage_config.get(

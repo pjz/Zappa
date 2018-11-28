@@ -2,8 +2,8 @@ import sys
 
 SUPPORTED_VERSIONS = [(2, 7), (3, 6)]
 
-python_major_version = sys.version_info[0]
-python_minor_version = sys.version_info[1]
+python_major_version = sys.version_info.major
+python_minor_version = sys.version_info.minor
 
 if (python_major_version, python_minor_version) not in SUPPORTED_VERSIONS:
     formatted_supported_versions = ['{}.{}'.format(mav, miv) for mav, miv in SUPPORTED_VERSIONS]

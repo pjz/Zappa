@@ -14,7 +14,7 @@ import sys
 
 from past.builtins import basestring
 
-if sys.version_info[0] < 3:
+if sys.version_info.major < 3:
     from urlparse import urlparse
 else:
     from urllib.parse import urlparse
@@ -171,12 +171,12 @@ def detect_flask_apps():
     return matches
 
 def get_venv_from_python_version():
-    return 'python' + str(sys.version_info[0]) + '.' + str(sys.version_info[1])
+    return 'python' + str(sys.version_info.major) + '.' + str(sys.version_info.minor)
 
 def get_runtime_from_python_version():
     """
     """
-    if sys.version_info[0] < 3:
+    if sys.version_info.major < 3:
         return 'python2.7'
     else:
         return 'python3.6'

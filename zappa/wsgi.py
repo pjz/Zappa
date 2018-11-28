@@ -10,7 +10,7 @@ from sys import stderr
 from werkzeug import urls
 
 # The joy of version splintering.
-if sys.version_info[0] < 3:
+if sys.version_info.major < 3:
     from urllib import urlencode
 else:
     from urllib.parse import urlencode

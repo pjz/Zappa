@@ -44,7 +44,7 @@ class TestWSGIMockMiddleWare(unittest.TestCase):
         self.assertEqual(x, 1)
 
     def test_wsgi_middleware_uglystring(self):
-        if sys.version_info[0] < 3:
+        if sys.version_info.major < 3:
             ugly_string = unicode("˝ÓÔÒÚÆ☃ЗИЙКЛМФХЦЧШ차를 타고 온 펲시맨(╯°□°）╯︵ ┻━┻)"
                                   "לֹהִים, אֵת הַשָּׁמַיִם, וְאֵת הָt͔̦h̞̲e̢̤ ͍̬̲͖f̴̘͕̣è͖ẹ̥̩l͖͔͚i͓͚̦͠n͖͍̗͓̳̮g͍ ̨ 𝕢𝕦𝕚𝕔𝕜 𝕓𝕣𝕠𝕨",
                                   encoding='utf8')

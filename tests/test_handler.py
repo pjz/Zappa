@@ -63,7 +63,7 @@ class TestZappa(unittest.TestCase):
             pass
 
     def test_run_fuction_with_type_hint(self):
-        python_version = sys.version_info[0]
+        python_version = sys.version_info.major
         # type hints are python 3 only
         if python_version == 3:
             scope = {}

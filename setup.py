@@ -8,7 +8,7 @@ with open('README.md') as readme_file:
     long_description = readme_file.read()
 
 with open(os.path.join(os.path.dirname(__file__), 'requirements.txt')) as f:
-    if sys.version_info[0] == 2:
+    if sys.version_info.major == 2:
         required = f.read().splitlines()
     else:
         # This logic is intended to prevent the futures package from being installed in python 3 environments
